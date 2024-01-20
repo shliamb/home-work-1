@@ -1,4 +1,4 @@
-#import time
+import time
 #from psycopg2 import OperationalError
 #import psycopg2
 from fastapi import FastAPI, HTTPException
@@ -6,24 +6,14 @@ from sqlalchemy.orm import sessionmaker
 from models import Base, Menu, Submenu, Dish
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, create_engine
 
-
-# creating 'engine'
-# engine = create_engine('sqlite:///./db/sqlite3.db')
-# Base.metadata.create_all(engine)
-
 engine = create_engine('postgresql://admin:12345@localhost:5432/my_database')
 Session = sessionmaker(bind=engine)
+#Base.metadata.create_all(engine)
 
-
-# connection = psycopg2.connect(
-#     database="my_database",
-#     user="admin",
-#     password="12345",
-#     host="localhost",
-#     port="5432"
-# )
 
 app = FastAPI()
+
+#time.sleep(10)
 
 # Здесь добавь эндпойнты для CRUD-операций
 
@@ -41,6 +31,7 @@ if __name__ == "__main__":
 
 
 
+# Скрипт в постмане который возможо поможет
 
 # скрипт в тесте  
 # // check that response status HTTP 201 CREATED 

@@ -29,6 +29,3 @@ class Dish(Base):
     name = Column(String)
     price = Column(Float)
 
-# creating 'engine'
-engine = create_engine('sqlite:///./db/sqlite3.db')
-Base.metadata.create_all(engine)
